@@ -19,17 +19,18 @@ import styled from "styled-components";
 /** 내부 파일 import */
 import { initialNodes } from "./nodes";
 import { edgeOptions, initialEdges, connectionLineStyle } from "./edges";
-import "./styles/flow.css";
+import { nodeTypes } from "./nodes";
 
 /** 넓이와 높이를 가지고 있는 최상단 요소 */
 const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
 `;
-
+/** 리액트 플로우의 스타일 */
 const ReactFlowStyle = {
   background: "#dcfce7",
 };
+
 /** Flow 컴포넌트 */
 export default function Flow() {
   /** 노드, 엣지 드래그 함수 */
@@ -54,6 +55,7 @@ export default function Flow() {
         defaultEdgeOptions={edgeOptions}
         connectionLineStyle={connectionLineStyle}
         fitView
+        nodeTypes={nodeTypes}
       >
         <Background
           id="1"

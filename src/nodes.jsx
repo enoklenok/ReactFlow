@@ -1,10 +1,21 @@
 // ** ReactFlow
 import { Position } from "reactflow";
 
+// ** 커스텀 노드 import
+import ClientNode from "./CustomNodes/ClientNode";
+import ServerNode from "./CustomNodes/ServerNode";
+import DBNode from "./CustomNodes/DBNode";
+
 /** 기본 노드 공통 */
 const nodeDefaults = {
   sourcePosition: Position.Right,
   targetPosition: Position.Left,
+};
+
+export const nodeTypes = {
+  clientNode: ClientNode,
+  serverNode: ServerNode,
+  dbNode: DBNode,
 };
 
 /** 부모 노드 공통 */
@@ -22,7 +33,7 @@ const parentNodeDefaults = {
 const childNodeDefaults = {
   className: "child",
   extent: "parent",
-  position: { x: 25, y: 50 }, //부모 상속하면 위치는 부모 기준으로 바뀜.
+  position: { x: 25, y: 25 }, //부모 상속하면 위치는 부모 기준으로 바뀜.
   style: {
     background: "#fef9c3",
     width: "100px",
@@ -58,7 +69,7 @@ export const initialNodes = [
     ...nodeDefaults,
     data: { label: "Client" },
     parentNode: "ClientBox",
-    type: "input",
+    type: "clientNode",
   },
   {
     id: "Server",
@@ -67,6 +78,7 @@ export const initialNodes = [
 
     data: { label: "Server" },
     parentNode: "ServerBox",
+    type: "serverNode",
   },
   {
     id: "DB",
@@ -75,6 +87,6 @@ export const initialNodes = [
 
     data: { label: "DB" },
     parentNode: "DBBox",
-    type: "output",
+    type: "dbNode",
   },
 ];
