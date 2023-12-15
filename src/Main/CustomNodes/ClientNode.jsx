@@ -5,7 +5,7 @@ import { Handle, Position } from "reactflow";
 import { Link } from "react-router-dom";
 
 // 내부 styled-components import
-import { NodeWrapper, NodeTitle } from "./NodeStyles";
+import { NodeWrapper, NodeTitle } from "../styles/NodeStyles";
 
 export default function ClientNode({ data, isConnectable }) {
   return (

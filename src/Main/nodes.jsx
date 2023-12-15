@@ -34,10 +34,6 @@ const childNodeDefaults = {
   className: "child",
   extent: "parent",
   position: { x: 25, y: 25 }, //부모 상속하면 위치는 부모 기준으로 바뀜.
-  style: {
-    background: "#fef9c3",
-    width: "100px",
-  },
 };
 
 /** 기본 노드 */

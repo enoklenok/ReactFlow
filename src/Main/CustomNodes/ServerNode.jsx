@@ -2,13 +2,12 @@
 import { Handle, Position } from "reactflow";
 
 // 내부 styled-components import
-import { NodeWrapper, NodeTitle } from "./NodeStyles";
+import { NodeWrapper, NodeTitle } from "../styles/NodeStyles";
 
 export default function ServerNode({ data, isConnectable }) {
   return (
     <NodeWrapper>
       <NodeTitle>Server</NodeTitle>
-
       <Handle
         id="server-a"
         type="target"
